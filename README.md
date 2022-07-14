@@ -3,4 +3,4 @@
 1. HTML, SCSS.
 2. Basic JavaScript.
 3. Figma landing.
-4. Adaptive, Adaptive Menu.
+4. Adaptive, adaptive menu.
