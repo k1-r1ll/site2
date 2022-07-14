@@ -1,0 +1,85 @@
+// 1. Fonts
+
+$montserrat: 'Montserrat', sans-serif;
+$inter: 'Inter', sans-serif;
+
+// 2. Colors
+
+$purple: #192252;
+$dark: #0E1734;
+$white: #fff;
+$grey: #848fac;
+$grey-light: #d9dbde;
+$blue: #424f7b;
+$dark-blue: #0b265a;
+$light-blue: #3c26b0;
+$pink: #ffece2;
+$orange1: rgba(250, 176, 71, 0.35);
+$orange2: #fab047;
+$orange3: #ff620a;
+
+
+// 3. Resolution
+
+@mixin breakpoint($point) {
+    @if $point == minlg {
+        @media (min-width: 993px) {
+            @content;
+        }
+    }
+    @if $point == lg {
+        @media (max-width: 992px) {
+            @content;
+        }
+    }
+    @else if $point == mlg {
+        @media (max-width: 954px) {
+            @content;
+        }
+    }
+    @else if $point == mmd {
+        @media (max-width: 786px) {
+            @content;
+        }
+    }
+    @else if $point == md {
+        @media (max-width: 768px) {
+            @content;
+        }
+    }
+    @else if $point == minsm {
+        @media (min-width: 640px) {
+            @content;
+        }
+    }
+    @else if $point == sm {
+        @media (max-width: 640px) {
+            @content;
+        }
+    }
+    @else if $point == midsm {
+        @media (max-width: 570px) {
+            @content;
+        }
+    }
+    @else if $point == xs {
+        @media (max-width: 500px) {
+            @content;
+        }
+    }
+    @else if $point == sxs {
+        @media (max-width: 400px) {
+            @content;
+        }
+    }
+    @else if $point == minsxs {
+        @media (min-width: 399px) {
+            @content;
+        }
+    }
+    @else if $point == lsxs {
+        @media (max-width: 300px) {
+            @content;
+        }
+    }
+}

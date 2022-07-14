@@ -1,0 +1,942 @@
+@import 'variables';
+
+// 0. Main Elements
+
+body {
+    font-family: $inter;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+	padding: 0 10px;
+}
+
+// 1. Header Section
+
+.header {
+    &__container {
+        padding: 35px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include breakpoint(sxs) {
+            flex-direction: column;
+        }
+    }
+}
+
+.logo {
+    font-family: $montserrat;
+    font-weight: 600;
+    font-size: 2rem;
+    color: $purple;
+}
+
+.logo-start {
+    @include breakpoint(sxs) {
+        margin-bottom: 3px;
+    }
+}
+
+.menu {
+    display: flex;
+    padding-left: 0;
+    &__item {
+        font-weight: 500;
+        font-size: 1rem;
+    }
+    &__item:not(:last-child) {
+        padding-right: 32px;
+    }
+    &__link {
+        text-decoration: none;
+		color: $purple;
+    }
+    @include breakpoint(sm) {
+        display: none;
+    }
+}
+
+.button {
+    width: 130px;
+    background-color: $dark;
+    font-size: 1rem;
+    color: $white;
+    border: none;
+    box-sizing: border-box;
+    color: $white;
+    padding: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+	&:hover {
+		transition: all 0.4s ease-out;
+		background-color: $light-blue;
+	}
+}
+
+
+// 2. Main Section
+
+.main {
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 80px;
+		@include breakpoint(md) {
+			padding-top: 40px;
+		}
+		@include breakpoint(xs) {
+			flex-direction: column;
+			padding-top: 10px;
+		}
+	}
+	&__text {
+		max-width: 45%;
+		@include breakpoint(xs) {
+			max-width: 80%;
+			padding-bottom: 20px;
+		}
+	}
+	&__header {
+		font-family: $montserrat;
+		font-weight: 600;
+		font-size: 3rem;
+		line-height: 72px;
+		color: $purple;
+		margin-top: -60px;
+		@include breakpoint(md) {
+			font-size: 1.5rem;
+			line-height: 30px;
+			margin-top: 0;
+		}
+		@include breakpoint(xs) {
+			text-align: center;
+			margin-top: 0;
+		}
+	}
+	&__par {
+		font-weight: 400;
+		font-size: 1.125rem;
+		color: $grey;
+		margin: 0;
+		margin-bottom: 32px;
+		line-height: 27px;
+		@include breakpoint(md) {
+			font-size: 0.9rem;
+			line-height: 20px;
+		}
+		@include breakpoint(xs) {
+			text-align: justify;
+		}
+	}
+	&__img {
+		flex-grow: 1;
+		max-width: 45%;
+	}
+	&__img-picture {
+		width: 100%;
+	}
+}
+
+.main-button {
+	@include breakpoint(xs) {
+		display: block;
+		margin: 0 auto;
+	}
+}
+
+// 3. Subtitle Section
+
+.subtitle {
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 140px 0;
+		@include breakpoint(sm) {
+			padding-bottom: 100px;
+		}
+		@include breakpoint(md) {
+			padding-top: 40px;
+			padding-bottom: 50px;
+		}
+		@include breakpoint(xs) {
+			flex-direction: column;
+			padding-top: 10px;
+			padding-bottom: 20px;
+		}
+	}
+	&__text {
+		max-width: 55%;
+		@include breakpoint(xs) {
+			max-width: 80%;
+			padding-bottom: 20px;
+		}
+	}
+	&__header {
+		font-family: $montserrat;
+		font-weight: 600;
+		font-size: 36px;
+		line-height: 54px;
+		color: $purple;
+		@include breakpoint(md) {
+			font-size: 1.5rem;
+			line-height: 30px;
+			margin-top: 0;
+		}
+		@include breakpoint(xs) {
+			text-align: center;
+			margin-top: 0;
+		}
+	}
+	&__par {
+		font-weight: 400;
+		font-size: 1.125rem;
+		color: $grey;
+		padding-right: 25px;
+		line-height: 27px;
+		@include breakpoint(md) {
+			font-size: 0.9rem;
+			line-height: 20px;
+		}
+		@include breakpoint(xs) {
+			text-align: justify;
+			padding-right: 0;
+		}
+		&--last {
+			margin-bottom: 40px;
+			@include breakpoint(xs) {
+				margin-bottom: 35px;
+			}
+		}
+	}
+	&__img {
+		flex-grow: 1;
+		max-width: 35%;
+		@include breakpoint(xs) {
+			order: 1;
+		}
+	}
+	&__img-picture {
+		width: 100%;
+	}
+}
+
+// 4. Services Section
+
+.services-container {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	padding-right: 150px;
+	padding-bottom: 160px;
+	@include breakpoint(mmd) {
+		padding-right: 40;
+	}
+	@include breakpoint(sm) {
+		flex-direction: column;
+		text-align: center;
+		padding-right: 0;
+		padding-bottom: 90px;
+	}
+	@include breakpoint(xs) {
+		padding-bottom: 50px;
+	}
+}
+
+.services-table {
+	&__img {
+		flex-grow: 1;
+		max-width: 384px;
+		@include breakpoint(mlg) {
+			max-width: 300px;
+		}
+		@include breakpoint(mmd) {
+			max-width: 200px;
+		}
+		&--first {
+			@include breakpoint(sm) {
+				margin-bottom: 30px;
+			}
+		}
+		&--last {
+			@include breakpoint(sm) {
+				order: 1;
+			}
+		}
+	}
+	&__pic {
+		width: 100%;
+	}
+	&__text {
+		flex-basis: 50%;
+	}
+	&__header {
+		font-family: $montserrat;
+		color: $purple;
+		font-weight: 600;
+		font-size: 2.25rem;
+		@include breakpoint(md) {
+			font-size: 1.5rem;
+			line-height: 30px;
+			margin-top: 0;
+		}
+		@include breakpoint(xs) {
+			text-align: center;
+			margin-top: 0;
+		}
+	}
+	&__par {
+		color: $grey;
+		font-weight: 400;
+		font-size: 1.125rem;
+		line-height: 27px;
+		@include breakpoint(md) {
+			font-size: 0.9rem;
+			line-height: 20px;
+		}
+		@include breakpoint(xs) {
+			text-align: justify;
+			padding-right: 0;
+		}
+	}
+}
+
+
+
+// 5. Middle Section
+
+.ms {
+	&__container {
+		text-align: center;
+		padding-bottom: 88px;
+		@include breakpoint(minlg) {
+			margin: 0 auto;
+			width: 588px;
+		}
+		@include breakpoint(lg) {
+			margin: 0 auto;
+			width: 588px;
+		}
+		@include breakpoint(md) {
+			width: 400px;
+		}
+		@include breakpoint(xs) {
+			width: 120px;
+		}
+	}
+	&__header {
+		font-family: $montserrat;
+		font-weight: 600;
+		font-size: 2.25rem;
+		line-height: 54px;
+		color: $purple;
+		margin-bottom: 0;
+		@include breakpoint(md) {
+			font-size: 1.5rem;
+			line-height: 30px;
+			margin-top: 0;
+		}
+		@include breakpoint(xs) {
+			text-align: center;
+			margin-top: 0;
+		}
+	}
+	&__par {
+		font-weight: 400;
+		font-size: 1.125rem;
+		line-height: 27px;
+		color: $grey;
+		@include breakpoint(md) {
+			font-size: 0.9rem;
+			line-height: 20px;
+		}
+		@include breakpoint(xs) {
+			text-align: justify;
+			padding-right: 0;
+		}
+	}
+}
+
+
+
+// 6. Room Section
+
+.room {
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		@include breakpoint(midsm) {
+			flex-direction: column;
+			text-align: center;
+		}
+	}
+	&__item {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		flex-basis: 32%;
+		@include breakpoint(midsm) {
+			align-items: center;
+			padding-bottom: 20px;
+		}
+	}
+	&__pic {
+		max-width: 100%;
+		@include breakpoint(midsm) {
+			max-width: 50%;
+		}
+	}
+	&__text {
+		flex: 1 1 auto;
+	}
+	&__header {
+		font-family: $montserrat;
+		font-weight: 600;
+		font-size: 1.5rem;
+		line-height: 36px;
+	}
+	&__par {
+		font-weight: 400;
+		font-size: 1.125rem;
+		line-height: 27px;
+		color: $grey;
+		@include breakpoint(md) {
+			font-size: 0.9rem;
+			line-height: 20px;
+		}
+		@include breakpoint(xs) {
+			text-align: justify;
+			padding-right: 0;
+		}
+	}
+}
+
+.arrow {
+	display: flex;
+	width: 130px;
+	align-items: center;
+	text-decoration: none;
+	&__text {
+		display: block;
+		margin-right: 12px;
+		font-weight: 400;
+		font-size: 1.125rem;
+		line-height: 27px;
+		color: $blue;
+	}
+	&__pic {
+		padding-top: 3px;
+	}
+	&--room {
+		@include breakpoint(sxs) {
+			display: none;
+		}
+	}
+	&__circle {
+		@include breakpoint(minsxs) {
+			display: none;
+		}
+	}
+	&__circlepic {
+		width: 30px;
+	}
+}
+
+
+
+// 7. Action Section
+
+.action {
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 160px 0;
+		@include breakpoint(sm) {
+			flex-direction: column;
+			text-align: center;
+			padding: 30px 0;
+		}
+		@include breakpoint(sxs) {
+			padding: 15px 0 30px;
+		}
+	}
+}
+
+.room-item {
+	flex-basis: 39%;
+	&__slogan {
+		font-weight: 500;
+		font-size: 1rem;
+		line-height: 24px;
+		color: $blue;
+	}
+	&__header {
+		margin-top: 0px;
+		margin-bottom: 0px;
+		font-family: $montserrat;
+		font-weight: 600;
+		font-size: 2.25rem;
+		line-height: 54px;
+		color: $purple;
+		@include breakpoint(md) {
+			font-size: 1.3rem;
+			line-height: 20px;
+		}
+	}
+	&__par {
+		font-weight: 400;
+		font-size: 1.125rem;
+		line-height: 27px;
+		color: $grey;
+		margin-bottom: 32px;
+		@include breakpoint(md) {
+			font-size: 0.9rem;
+			line-height: 20px;
+		}
+		@include breakpoint(xs) {
+			text-align: justify;
+		}
+	}
+	&__buttons {
+		@include breakpoint(mlg) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+}
+
+.action-item {
+	@include breakpoint(minsm) {
+		width: 587px;
+	}
+	&__list {
+		list-style-type: none;
+		padding-left: 0px;
+	}
+	&__item {
+		border: 1px solid $white;
+		border-radius: 4px;
+		padding: 36px 38px;
+		margin-bottom: 24px;
+		box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.07);
+		&__:last-child {
+			margin-bottom: 0;
+		}@include breakpoint(xs) {
+			padding: 10px 10px;
+		}
+	}
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@include breakpoint(md) {
+			flex-direction: column;
+		}
+	}
+	&__header {
+		font-family: $montserrat;
+		font-weight: 600;
+		font-size: 1.5rem;
+		line-height: 36px;
+		margin: 0;
+		@include breakpoint(md) {
+			font-size: 1.2rem;
+			line-height: 20px;
+			margin-bottom: 10px;
+			text-align: center;
+		}
+	}
+	&__text {
+		font-weight: 400;
+		font-size: 1.125rem;
+		line-height: 27px;
+		color: $grey;
+		margin-bottom: 0px;
+		@include breakpoint(md) {
+			font-size: 0.9rem;
+			line-height: 20px;
+		}
+		@include breakpoint(xs) {
+			text-align: justify;
+			padding-right: 0;
+		}
+	}
+	&__button {
+		cursor: pointer;
+		border: 1px solid $pink;
+		padding: 0;
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		padding-top: 3px;
+		background-color: $pink;
+		background-image: url(../img/action_arrs/arrow_down.svg);
+		background-position: center center;
+		&:hover {
+			background-color: $orange3;
+			border-color: $orange3;
+			transition: all 0.4s ease-out;
+			background-image: url(../img/action_arrs/arrow_up.svg);
+		}
+	}
+}
+
+.option {
+	margin-left: 24px;
+	font-weight: 500;
+	font-size: 1rem;
+	line-height: 19.36px;
+	text-decoration: none;
+	color: $dark;
+	@include breakpoint(mlg) {
+		display: flex;
+		flex-direction: column;
+		margin-top: 24px;
+		margin-left: 0px;
+	}
+}
+
+.action-item__item:not(.active) .action-item__text {
+	display: none;
+}
+
+.action-item__button--change {
+	background-color: $orange3;
+	border-color: $orange3;
+	background-image: url(../img/action_arrs/arrow_up.svg);
+	&:hover {
+		background-color: $pink;
+		border-color: $pink;
+		transition: all 0.4s ease-out;
+		background-image: url(../img/action_arrs/arrow_down.svg);
+	}
+}
+
+// 8. Customer Section
+
+.customer {
+	&__container {
+		max-width: 793px;
+		margin: 0 auto;
+		text-align: center;
+		padding-bottom: 80px;
+	}
+	&__header {
+		font-size: $montserrat;
+		font-weight: 600;
+		font-size: 2.25rem;
+		line-height: 54px;
+		color: $purple;
+		margin-bottom: 60px;
+		@include breakpoint(md) {
+			font-size: 1.5rem;
+			line-height: 30px;
+			margin-top: 0;
+		}
+	}
+	&__pic {
+		margin-bottom: 10px;
+		width: 120px;
+	}
+	&__par {
+		font-weight: 400;
+		font-size: 1.125rem;
+		line-height: 27px;
+		color: $grey;
+		margin-bottom: 30px;
+		@include breakpoint(md) {
+			font-size: 0.9rem;
+			line-height: 20px;
+		}
+		@include breakpoint(xs) {
+			text-align: justify;
+			padding-right: 0;
+		}
+	}
+	&__name {
+		font-weight: 500;
+		font-size: 1.25rem;
+		line-height: 30px;
+		color: $purple;
+		margin-bottom: 0;
+	}
+	&__buttons {
+		list-style-type: none;
+		padding-left: 0px;
+		display: flex;
+		justify-content: center;
+	}
+	&__itpic {
+		border: none;
+		padding: 5px;
+		border-radius: 50%;
+		background: $orange1;
+		margin-right: 12px;
+		cursor: pointer;
+		&__:last-child {
+			margin-right: 0;
+		}
+		&:hover {
+			background-color: $orange3;
+			border-color: $orange3;
+			transition: all 0.4s ease-out;
+		}
+	}
+}
+
+.customer__itpic--change {
+	border: none;
+	background-color: $orange3;
+	border-color: $orange3;
+	border-radius: 50%;
+}
+
+
+// 9. Footer
+
+.footer {
+	background: $dark-blue;
+	&__container {
+		display: flex;
+		align-items: center;
+		padding: 120px 0px;
+		@include breakpoint(md) {
+			flex-direction: column;
+			padding: 60px 0px;
+		}
+		@include breakpoint(lsxs) {
+			padding: 30px 0px;
+		}
+	}
+}
+
+.cootels {
+	&__item {
+		flex-basis: 50%;
+		@include breakpoint(md) {
+			text-align: center;
+		}
+	}
+	&__header {
+		margin-top: 0px;
+		margin-bottom: 13px;
+		font-family: $montserrat;
+		font-weight: 700;
+		font-size: 2rem;
+		line-height: 39.01px;
+		color: $white;
+		@include breakpoint(md) {
+			font-size: 20px;
+		}
+	}
+	&__par {
+		font-weight: 400;
+		font-size: 1rem;
+		line-height: 28px;
+		color: $grey-light;
+		width: 186px;
+		margin-bottom: 36px;
+		@include breakpoint(md) {
+			font-size: 0.625rem;
+		}
+		@include breakpoint(lsxs) {
+			width: 100%;
+		}
+	}
+	&__list {
+		list-style-type: none;
+		padding-left: 0px;
+		margin-bottom: 0px;
+		display: flex;
+		align-items: center;
+		@include breakpoint(md) {
+			justify-content: center;
+		}
+	}
+	&__listitem {
+		margin-right: 24px;
+		&:last-child {
+			margin-right: 0px;
+		}
+	}
+	&__pic {
+		@include breakpoint(lsxs) {
+			width: 15px;
+		}
+	}
+}
+
+.data {
+	&__item {
+		display: flex;
+		justify-content: space-between;
+		flex-basis: 40%;
+		align-items: flex-start;
+		@include breakpoint(mlg) {
+			flex-basis: 50%;
+		}
+		@include breakpoint(md) {
+			width: 70%;
+		}
+		@include breakpoint(sxs) {
+			width: 90%;
+		}
+		@include breakpoint(lsxs) {
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			order: -1;
+		}
+	}
+	&__list {
+		list-style-type: none;
+		padding-left: 0px;
+	}
+	&__listitem {
+		padding-bottom: 24px;
+		font-weight: 400;
+		font-size: 1rem;
+		line-height: 19.36px;
+		&__:last-child {
+			padding-bottom: 0px
+		}
+		@include breakpoint(md) {
+			font-size: 0.75rem;
+		}
+	}
+	&__title {
+		font-weight: 700;
+		line-height: 19.36px;
+		color: $white;
+	}
+	&__link {
+		text-decoration: none;
+		color: $grey-light;
+	}
+}
+
+// Other
+
+// Burger Menu
+
+.nav-bar {
+	position: absolute;
+	background-color: $purple;
+	top: 0;
+	right: 100%;
+	height: 100vh;
+	width: 250px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: position 2.9s;
+	-webkit-transition: position 2.9s;
+	-moz-transition: position 2.9s;
+	-ms-transition: position 2.9s;
+	-o-transition: position 2.9s;
+}
+
+.toggle {
+	left: 0;
+	box-shadow: 1px 0 15px 2px rgba(0, 0, 0, 0.4);
+
+}
+
+.toggle-menu {
+	z-index: 999;
+	background-color: rgba(0, 0, 0, 0.2);
+	width: 40px;
+	height: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+    padding: 2px 2px 2px 3px;
+	border-radius: 5px;
+	cursor: pointer;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+    @include breakpoint(minsm) {
+        display: none;
+    }
+	@include breakpoint(sxs) {
+        margin-bottom: 10px;
+    }
+  
+}
+
+.line {
+	width: 100%;
+	height: 3px;
+	border-radius: 5px;
+	background-color: #fff;
+	transition: transform 0.2s ease-out;
+	-webkit-transition: transform 0.2s ease-out;
+	-moz-transition: transform 0.2s ease-out;
+	-ms-transition: transform 0.2s ease-out;
+	-o-transition: transform 0.2s ease-out;
+}
+
+.toggle .line1 {
+	background-color: #000000;
+	transform: scale(0.9) rotateZ(-45deg) translate(-6px, 4px);
+}
+
+.toggle .line2 {
+	display: none;
+}
+
+.toggle .line3 {
+	background-color: #000000;
+	transform: scale(0.9) rotateZ(45deg) translate(-6px, -4px);
+}
+
+.toggle .toggle-menu {
+	background-color: white;
+}
+
+.nav-list {
+	list-style: none;
+    padding-left: 0;
+}
+
+.nav-list-item {
+	text-align: center;
+	padding: 10px 0;
+}
+
+.nav-link {
+	color: #fff;
+	font-size: 1.375rem;
+	text-decoration: none;
+	position: relative;
+	padding-bottom: 4px;
+}
+
+.nav-link::before {
+	position: absolute;
+	content: '';
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 1px;
+	background-color: #fff;
+	transform: scaleX(0);
+	transition: transform 0.4s ease-in-out;
+	transform-origin: left;
+	-webkit-transition: transform 0.4s ease-in-out;
+	-moz-transition: transform 0.4s ease-in-out;
+	-ms-transition: transform 0.4s ease-in-out;
+	-o-transition: transform 0.4s ease-in-out;
+}
+
+.nav-link:hover::before {
+	transform: scaleX(1);
+}
